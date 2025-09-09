@@ -20,7 +20,6 @@ set --universal pure_symbol_prompt INSERT
 set --universal pure_symbol_reverse_prompt NORMAL
 set --universal pure_symbol_git_dirty " :"
 
-
 # Use LS_COLORS to color fff.
 # (On by default if available)
 # (Ignores FFF_COL1)
@@ -138,27 +137,16 @@ end
 # pnpm end
 
 #Export HELIX runtime location
-export HELIX_RUNTIME=~/src/helix/runtime
+export HELIX_RUNTIME=~/.config/helix/runtime
 
 # Added by Windsurf
 fish_add_path /Users/cemalokten/.codeium/windsurf/bin
 
-# task-warrior GTD alias
-alias in='task add +in project:general'
-
-# Pomodoro timer
-function work
-    # usage: work 10m, work 60s etc. Default is 20m
-    set -q argv[1]; or set argv[1] 20m
-    timer $argv[1]; and terminal-notifier -message Pomodoro \
-        -title 'Work Timer is up! Take a Break 😊' \
-        -sound Crystal
+function aero
+    osascript -e 'quit app "AeroSpace"' && open -a AeroSpace
 end
+alias claude="/Users/cemalokten/.claude/local/claude"
 
-function rest
-    # usage: rest 10m, rest 60s etc. Default is 5m
-    set -q argv[1]; or set argv[1] 5m
-    timer $argv[1]; and terminal-notifier -message Pomodoro \
-        -title 'Break is over! Get back to work 😬' \
-        -sound Crystal
-end
+# Open todo.md
+alias td='hx "~/code/notes/todo.md"'
+alias todo='hx "~/code/notes/todo.md"'

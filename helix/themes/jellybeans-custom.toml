@@ -14,7 +14,7 @@
 # Contributors:
 # @cemalokten
 
-"attribute" = "green"
+"attribute" = "light_purple"
 "type" = "light_blue"
 "type.enum.variant" = "purple"
 "constructor" = "yellow" 
@@ -45,8 +45,10 @@
 "function.method" = "yellow"
 "tag" = "light_blue"
 "special" = "green"
+"things.fixme" = "green"
 "namespace" = "light_purple"
 
+  
 "markup.bold" = { fg = "white", modifiers = ["bold"] }
 "markup.italic" = { modifiers = ["italic"] }
 "markup.heading" = { fg = "yellow", modifiers = ["bold"] } 
@@ -91,7 +93,7 @@
 "ui.selection.primary" = { bg = "selection", modifiers = ["reversed"]  }
 # "ui.selection" = { bg = "darker" }
 # "ui.selection.primary" = { bg = "selection", fg = "selectionFG" }
-"ui.virtual.jump-label" = { fg = "darkest", bg = "purple", modifiers = ["bold"] }
+"ui.virtual.jump-label" = { fg = "#ff7300"  }
 
 "hint" = "blue"
 "info" = "yellow_accent"
@@ -104,7 +106,7 @@
 "diagnostic.error" = { underline = { color = "red_accent", style = "line" } }
 
 [palette]
-background = "#151515"
+# background = "#151515"
 darkest = "#1e1e1e"
 darker = "#292929"
 dark = "#898989"

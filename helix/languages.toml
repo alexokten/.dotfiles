@@ -35,3 +35,8 @@ language-servers = [ { name = "vscode-json-language-server", except-features = [
 auto-format = true
 formatter = { command = "biome", args = ["format", "--stdin-file-path", "file.json"] }
 
+[[language]]
+name = "markdown"
+auto-format = true
+language-servers = [ "markdown-oxide" ]
+formatter = { command = "dprint", args = ["fmt", "--stdin", "md"]}

@@ -1,0 +1,1 @@
+source "/Users/cemalokten/.deno/env.fish"

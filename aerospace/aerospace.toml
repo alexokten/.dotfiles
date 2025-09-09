@@ -7,6 +7,7 @@
 enable-normalization-flatten-containers = false
 enable-normalization-opposite-orientation-for-nested-containers = false
 
+
 # Mouse follows focus when focused monitor changes
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
@@ -79,7 +80,55 @@ enter = 'mode main'
 esc = 'mode main'
 
 
+
 # Desktop
+
+[[on-window-detected]]
+if.app-id = 'org.mozilla.firefox'      # Firefox
+run = 'move-node-to-workspace 1'       # Browser workspace
+
+[[on-window-detected]]
+if.app-id = 'com.github.wez.wezterm'   # WezTerm
+run = 'move-node-to-workspace 1'       # Terminal workspace
+
+[[on-window-detected]]
+if.app-id = 'com.missiveapp.osx'  # Thunderbird
+run = 'move-node-to-workspace 2'       # Design workspace
+
+[[on-window-detected]]
+if.app-id = 'com.linear'               # Linear
+run = 'move-node-to-workspace 3'       # Issuesworkspace
+
+[[on-window-detected]]
+if.app-id = 'com.apple.iCal'           # Calendar
+run = 'move-node-to-workspace 4'       
+
+[[on-window-detected]]
+if.app-id = "net.whatsapp.WhatsApp"    # Whatsapp
+run = 'move-node-to-workspace 5'       # Communication workspace
+
+[[on-window-detected]]
+if.app-id = "org.whispersystems.signal-desktop" #Signal
+run = 'move-node-to-workspace 5'       # Communication workspace
+
+[[on-window-detected]]
+if.app-id = 'com.figma.Desktop'        # Figma
+run = 'move-node-to-workspace 6'       # Design workspace
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Music'         # Music
+run = 'move-node-to-workspace 7'       # Music workspace
+
+
+[gaps]
+inner.horizontal = 0
+inner.vertical =   0
+outer.left =       0
+outer.bottom =     0
+outer.top =        0
+outer.right =      0
+
+# Laptop
 
 # [[on-window-detected]]
 # if.app-id = 'com.github.wez.wezterm'  # WezTerm
@@ -87,54 +136,38 @@ esc = 'mode main'
 
 # [[on-window-detected]]
 # if.app-id = 'org.mozilla.firefox'      # Firefox
-# run = 'move-node-to-workspace 1'       # Browser workspace
+# run = 'move-node-to-workspace 2'       # Browser workspace
+
+# [[on-window-detected]]
+# if.app-id = 'com.missiveapp.osx'  # Thunderbird
+# run = 'move-node-to-workspace 3'       # Design workspace
+
+# [[on-window-detected]]
+# if.app-id = 'com.linear'               # Linear
+# run = 'move-node-to-workspace 4'       # Design workspace
 
 # [[on-window-detected]]
 # if.app-id = 'com.figma.Desktop'        # Figma
-# run = 'move-node-to-workspace 2'       # Design workspace
-
-# [[on-window-detected]]
-# if.app-id = "net.whatsapp.WhatsApp"
-# run = 'move-node-to-workspace 3'       # Communication workspace
-
-# [[on-window-detected]]
-# if.app-id = 'com.cron.electron'        # Calendar
-# run = 'move-node-to-workspace 4'       
-
-# [[on-window-detected]]
-# if.app-id = 'com.spotify.client'        # Spotify
 # run = 'move-node-to-workspace 5'       # Design workspace
 
-# Laptop
+# [[on-window-detected]]
+# if.app-id = "org.whispersystems.signal-desktop"
+# run = 'move-node-to-workspace 6'       # Communication workspace
 
-[[on-window-detected]]
-if.app-id = 'com.github.wez.wezterm'  # WezTerm
-run = 'move-node-to-workspace 1'       # Terminal workspace
+# [[on-window-detected]]
+# if.app-id = 'com.apple.iCal'           # Calendar
+# run = 'move-node-to-workspace 7'       
 
-[[on-window-detected]]
-if.app-id = 'org.mozilla.firefox'      # Firefox
-run = 'move-node-to-workspace 2'       # Browser workspace
+# [[on-window-detected]]
+# if.app-id = 'com.apple.Music'         # Music
+# run = 'move-node-to-workspace 8'       # Music workspace
 
-[[on-window-detected]]
-if.app-id = 'com.figma.Desktop'        # Figma
-run = 'move-node-to-workspace 3'       # Design workspace
 
-[[on-window-detected]]
-if.app-id = "net.whatsapp.WhatsApp"
-run = 'move-node-to-workspace 4'       # Communication workspace
+# [gaps]
+# inner.horizontal = 0
+# inner.vertical =   0
+# outer.left =       0
+# outer.bottom =     0
+# outer.top =        0
+# outer.right =      0
 
-[[on-window-detected]]
-if.app-id = 'com.cron.electron'        # Calendar
-run = 'move-node-to-workspace 5'       
-
-[[on-window-detected]]
-if.app-id = 'com.spotify.client'        # Spotify
-run = 'move-node-to-workspace 6'       # Design workspace
-
-[gaps]
-inner.horizontal = 40
-inner.vertical =   40
-outer.left =       40
-outer.bottom =     40
-outer.top =        40
-outer.right =      40

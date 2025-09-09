@@ -2,16 +2,22 @@ local wezterm = require 'wezterm'
 return {
   -- default_prog = {'/Users/cemalokten/.cargo/bin/nu'},
   color_scheme = 'Jellybeans',
-  font = wezterm.font('JetBrains Mono', { weight = 'Regular' }),
-  font = wezterm.font { family = 'Pragmata Pro Mono' },
-  font = wezterm.font ( 'Iosevka', { weight = 'Regular', }),
+  -- font = wezterm.font('JetBrains Mono', { weight = 'Regular' }),
+  -- font = wezterm.font { family = 'Pragmata Pro Mono' },
+  font = wezterm.font ( 'Iosevka', { weight = 'Medium', }),
+  -- font = wezterm.font ( 'TX-02', { weight = 'Light', }),
   -- font = wezterm.font { family = 'Essential PragmataPro' },
   -- font = wezterm.font('Berkeley Mono'),
-  -- font = wezterm.font('Envy Code R'),
+  -- font = wezterm.font('Berkeley Mono'),
+  command_palette_font = wezterm.font( 'Iosevka', { weight = 'Regular', }),
+  command_palette_font_size = 20,
+  command_palette_bg_color = '#151515',     -- Background colour for command palette
+  command_palette_rows = 10, 
   freetype_load_target = "Normal",
+  freetype_load_flags = 'NO_HINTING',
   force_reverse_video_cursor = true,
   term = "xterm-256color",
-  scrollback_lines = 3500,
+  scrollback_lines = 10000,
   -- line_height = 1.25,
   -- cell_width = 1.0,
   -- line_height = 1.35,
@@ -24,16 +30,17 @@ return {
   font_size = 14, -- Laptop small
   font_size= 15, -- Laptop
   font_size = 16, -- 27" Screen Small
-  -- font_size = 17, -- 27" Screen Medium
-  -- font_size = 18, -- 27" Screen Large
+  font_size = 17, -- 27" Screen Medium
+  font_size = 18, -- 27" Screen Large
   -- font_size = 20, -- 27" Screen Large
   tab_max_width = 500,
+  line_height = 1.0,
   use_fancy_tab_bar = false,
   cursor_blink_rate = 0,
-  command_palette_font_size = 18,
   send_composed_key_when_left_alt_is_pressed = false,
   -- Performace settings
-  front_end = "WebGpu",
+  -- front_end = "WebGpu",
+  front_end = "OpenGL",
   max_fps = 144,
   colors = {
     copy_mode_active_highlight_fg={Color="#ffffff"},
@@ -91,6 +98,10 @@ return {
   },
   window_decorations = "RESIZE",
   window_background_opacity = 1,
+  pane_focus_follows_mouse = false,
+  inactive_pane_hsb = {
+    brightness = 0.5,
+  },
   keys = {
     -- This will create a new split and run your default program inside it
     {
@@ -104,21 +115,42 @@ return {
       action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
     },
     { key = " ", mods = "SHIFT", action = wezterm.action.SendString("_")},
+     {
+    key = '0',
+    mods = 'CTRL',
+    action = wezterm.action.PaneSelect {
+      mode = 'SwapWithActive',
+      alphabet = '1234567890',
+    },
+  },
+  
     {
       key = 'w',
       mods = 'CMD',
       action = wezterm.action.CloseCurrentPane { confirm = true },
     },
-    {
-      key="l",
-      mods="CMD",
-      action = wezterm.action{ ActivatePaneDirection="Next" }
+       {
+      key = 'm',
+      mods = 'CTRL|SHIFT|ALT|CMD',
+      action = wezterm.action.ActivatePaneDirection('Next'),
     },
     {
 		key = "3",
 		mods = "OPT",
 		action = wezterm.action.SendString("#"),
 	},
+	   {
+      key = 'p',
+      mods = 'CTRL|SHIFT|ALT|CMD',
+      action = wezterm.action.ActivateCommandPalette,
+    },
+	   {
+      key = 't',
+      mods = 'CTRL|SHIFT|ALT|CMD',
+       action = wezterm.action.ShowLauncherArgs {
+        flags = 'FUZZY|TABS',
+      },
+    },
  },
 }
 
