@@ -80,12 +80,12 @@ set -x GOPATH $HOME/go
 set -x PATH $PATH $GOPATH/bin
 
 # MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-set --export --prepend PATH "/Users/cemalokten/.rd/bin"
+set --export --prepend PATH "/Users/$HOME/.rd/bin"
 # MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
 # FZF & RIPGREP
 function fzf_rg
-    bash /Users/cemalokten/.config/fish/bash/fzf.sh
+    bash /Users/$HOME/.config/fish/bash/fzf.sh
 end
 
 bind -M insert \cf fzf_rg
@@ -130,7 +130,7 @@ function yy
 end
 
 # pnpm
-set -gx PNPM_HOME /Users/cemalokten/Library/pnpm
+set -gx PNPM_HOME /Users/$HOME/Library/pnpm
 if not string match -q -- $PNPM_HOME $PATH
     set -gx PATH "$PNPM_HOME" $PATH
 end
@@ -140,12 +140,11 @@ end
 export HELIX_RUNTIME=~/.config/helix/runtime
 
 # Added by Windsurf
-fish_add_path /Users/cemalokten/.codeium/windsurf/bin
+fish_add_path /Users/$HOME/.codeium/windsurf/bin
 
 function aero
     osascript -e 'quit app "AeroSpace"' && open -a AeroSpace
 end
-alias claude="/Users/cemalokten/.claude/local/claude"
 
 # Open todo.md
 alias td='hx "~/code/notes/todo.md"'
