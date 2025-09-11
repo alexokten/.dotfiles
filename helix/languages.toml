@@ -40,3 +40,13 @@ name = "markdown"
 auto-format = true
 language-servers = [ "markdown-oxide" ]
 formatter = { command = "dprint", args = ["fmt", "--stdin", "md"]}
+
+[[language]]
+name = "html"
+language-servers = [{ name = "superhtml", except-features = ["format"] }, "vscode-html-language-server"]
+auto-format = true
+
+[[language]]
+name = "php"
+auto-format = true
+formatter = { command = "php-cs-fixer", args = ["fix", "--using-cache=no", "-"] }
