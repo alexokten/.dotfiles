@@ -4,14 +4,16 @@ return {
   color_scheme = 'Jellybeans',
   -- font = wezterm.font('JetBrains Mono', { weight = 'Regular' }),
   -- font = wezterm.font { family = 'Pragmata Pro Mono' },
-  font = wezterm.font ( 'Iosevka', { weight = 'Medium', }),
+  -- font = wezterm.font ( 'Pragmasevka', { weight = 'Medium', }),
+  font = wezterm.font('Iosevka Term SS08', { weight = 'Medium' }),
   -- font = wezterm.font ( 'TX-02', { weight = 'Light', }),
   -- font = wezterm.font { family = 'Essential PragmataPro' },
   -- font = wezterm.font('Berkeley Mono'),
   -- font = wezterm.font('Berkeley Mono'),
-  command_palette_font = wezterm.font( 'Iosevka', { weight = 'Regular', }),
-  command_palette_font_size = 20,
+  command_palette_font_size = 25,
+  command_palette_font = wezterm.font('Iosevka Term SS08', { weight = 'Medium' }),
   command_palette_bg_color = '#151515',     -- Background colour for command palette
+  command_palette_fg_color = '#8787D7',     -- Background colour for command palette
   command_palette_rows = 10, 
   freetype_load_target = "Normal",
   freetype_load_flags = 'NO_HINTING',
@@ -32,15 +34,14 @@ return {
   font_size = 16, -- 27" Screen Small
   font_size = 17, -- 27" Screen Medium
   font_size = 18, -- 27" Screen Large
-  -- font_size = 20, -- 27" Screen Large
+  font_size = 20, -- 27" Screen Large
   tab_max_width = 500,
   line_height = 1.0,
   use_fancy_tab_bar = false,
   cursor_blink_rate = 0,
   send_composed_key_when_left_alt_is_pressed = false,
   -- Performace settings
-  -- front_end = "WebGpu",
-  front_end = "OpenGL",
+  front_end = "WebGpu",
   max_fps = 144,
   colors = {
     copy_mode_active_highlight_fg={Color="#ffffff"},
